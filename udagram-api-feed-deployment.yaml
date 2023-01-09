@@ -18,6 +18,11 @@ spec:
       - image: miriamsafwat/udagram-api-feed:latest
         name: udagram-api-feed
         imagePullPolicy: Always
+        resources:
+            requests:
+                memory: "100Mi"
+            limits:
+                memory: "200Mi"
         ports:
         - containerPort: 8080
         envFrom:
