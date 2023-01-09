@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    service: udagram-api-feed
-  name: udagram-api-feed
+    service: udagram-api-user
+  name: udagram-api-user
 spec:
   selector:
     matchLabels:
-      service: udagram-api-feed
+      service: udagram-api-user
   replicas: 3
   template:
     metadata:
       labels:
-        service: udagram-api-feed
+        service: udagram-api-user
     spec:
       containers:
-      - image: miriamsafwat/udagram-api-feed:latest
-        name: udagram-api-feed
+      - image: miriamsafwat/udagram-api-user:latest
+        name: udagram-api-user
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
